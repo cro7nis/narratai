@@ -1,0 +1,45 @@
+[tool.poetry]
+name = "narratai"
+version = "0.1.0"
+description = ""
+authors = ["cro7 <cro7nis@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.13"
+torch = "2.5.1+cu121"
+torchaudio = "2.5.1+cu121"
+accelerate = "*"
+matplotlib = "*"
+tqdm = "*"
+gradio = "*"
+omegaconf = "*"
+dynaconf = "*"
+srt = "*"
+faster-whisper = "1.0.3"
+coqui-tts = "*"
+loguru = "*"
+pydantic = "*"
+hangul_romanize = "*"
+mecab-python3 = "*"
+cutlet = "*"
+unidic-lite = "*"
+pypinyin = "*"
+pydub = "*"
+librosa = "0.10.2.post1"
+
+[tool.poetry.group.dev]
+optional = true
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.3"
+pytest-cov = "^4.1.0"
+httpx = "^0.24.1"
+
+[tool.pytest.ini_options]
+log_cli = true
+log_cli_level = 'warning'
+minversion = "6.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

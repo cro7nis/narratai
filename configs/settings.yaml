@@ -1,0 +1,66 @@
+default:
+  logging:
+    level: DEBUG
+    format: "<green>{time:YYYY-MM-DD HH:mm:ss.SSS}</green> | <yellow>{process}</yellow> |<level>{level: <8}</level> | <cyan>{name}:<cyan>{extra[classname]}</cyan>:</cyan>:<cyan>{function}</cyan>:<cyan>{line}</cyan> - <level>{message}</level>"
+  transcriber:
+    model: medium
+    device: cuda:0
+    ckpt_path: checkpoints/whisper
+    compute_type: float16
+    cpu_threads: 1
+    num_workers: 1
+    local_files_only: false
+    parameters:
+      beam_size: 5
+      best_of: 5
+      temperature: [ 0.0, 0.2 ]
+      word_timestamps: true
+      compression_ratio_threshold: 2.4
+      condition_on_previous_text: false
+      log_prob_threshold: -0.8
+      no_speech_threshold: 0.5
+  translator:
+    model_id: facebook/nllb-200-distilled-600M
+    max_input_tokens_per_sentence: 210
+    max_gen_tokens: 210
+    unk_token: '<unk>'
+    special_token: '▁'
+    cache_dir: checkpoints
+    device: 'cuda:0'
+    local_files_only: false
+  voice_generator:
+    model_name: tts_models/multilingual/multi-dataset/xtts_v2
+    device: cuda:0
+    checkpoint_path: checkpoints
+    speaker_dict_path: checkpoints/data/speaker_data.pkl
+  app:
+    cache_dir: /tmp/gradio
+
+
+
+development:
+  env: development
+#  transcriber:
+#    ckpt_path: ../checkpoints/whisper
+#    dynaconf_merge: True
+#  voice_generator:
+#    checkpoint_path: ../checkpoints
+#    speaker_dict_path: ../checkpoints/data/speaker_data.pkl
+#    dynaconf_merge: True
+#  translator:
+#    cache_dir: ../checkpoints
+#    dynaconf_merge: True
+
+
+staging:
+  env: staging
+  logging:
+    level: INFO
+    dynaconf_merge: True
+
+production:
+  env: production
+  logging:
+    level: INFO
+    format: "<green>{time:YYYY-MM-DD HH:mm:ss.SSS}</green> | <yellow>{process}</yellow> |<level>{level: <8}</level> | <level>{message}</level>"
+    dynaconf_merge: True
