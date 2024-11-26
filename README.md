@@ -2,19 +2,20 @@
 <img src="assets/image/Narratai_lg.png"  alt="Narratai logo"/>
 
 ## Description
-Narratai is an AI-powered app built for [Akashathon](https://app.buidlbox.io/akash-network/akashathon-3) 
-that runs on the decentralized Akash Network <img src="assets/image/akash-logo-sm.png" alt="drawing" style="width:15px;"/>.
-It transcribes audiovisual media, translates text into multiple languages, and generates AI-powered voiceovers. 
-Designed to enhance media accessibility and localization using decentralized infrastructure.
+Narratai is an AI-powered app built for [Akashathon](https://app.buidlbox.io/akash-network/akashathon-3),
+running on the decentralized Akash Network <img src="assets/image/akash-logo-sm.png" alt="drawing" style="width:15px;"/>. 
+It processes audio and video files by transcribing speech into text, translating it into multiple languages, and generating AI-driven voiceovers. 
+The app uses Whisper to create accurate transcriptions with word-level timestamps, enabling precise subtitles. 
+It leverages the NLLB model to translate subtibles into many languages. 
+For voiceovers, it uses Coqui-TTS, an advanced AI technology to generate natural-sounding voices, offering options for predefined voices, voice cloning, or using the original speaker's voice. 
+Narratai enhances media accessibility and localization while showcasing the power of decentralized infrastructure and AI.
 
 ## Motivation
-The motivation behind building this app stemmed from my experience participating in Akash Zealy campaigns, 
+The motivation behind building this app stemmed from my experience participating in Akash [Zealy](https://zealy.io/cw/akashnetwork/questboard) campaigns, 
 where I deployed numerous AI models on the Akash Network. 
 In some tasks, users were required to create video tutorials demonstrating their deployments. 
 As someone who isn’t confident in my English accent, 
-I thought it would be amazing to build an app that generates AI-powered voiceovers for such content.
-
-As I started developing the app, I realized it could go beyond just voiceovers. 
+I thought it would be amazing to build an app that generates AI-powered voiceovers for such content. As I started developing the app, I realized it could go beyond just voiceovers. 
 Adding a translation feature would make media accessible to a global audience, 
 breaking language barriers and promoting inclusivity. 
 This inspired me to create a tool that not only supports creators but also enhances accessibility for everyone.
