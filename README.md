@@ -3,7 +3,7 @@
 
 ## Description
 Narratai is an AI-powered app built for [Akashathon](https://app.buidlbox.io/akash-network/akashathon-3) 
-that runs on the decentralized Akash Network.
+that runs on the decentralized Akash Network <img src="assets/image/akash-logo-sm.png" alt="drawing" style="width:15px;"/>.
 It transcribes audiovisual media, translates text into multiple languages, and generates AI-powered voiceovers. 
 Designed to enhance media accessibility and localization using decentralized infrastructure.
 
