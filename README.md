@@ -69,8 +69,7 @@ The diagram illustrates the workflow of the **Narratai** application, which proc
 
 | Original                                  | Predefined Speaker - English | Predefined Speaker - Spanish | Voice Cloning - Japanese |
 |-------------------------------------------|------------------------------|------------------------------|--------------------------|
-|  |                              |                              |
-
+|https://github.com/user-attachments/assets/b2ad070d-cb2b-4f77-a84a-cacd6011d430| https://github.com/user-attachments/assets/d2f941ed-3eeb-4eaa-9059-b2e9b19ca107| https://github.com/user-attachments/assets/e2d7b58d-eb90-46d6-ba0d-43dc3d06b3a7 | https://github.com/user-attachments/assets/3ed7d2dd-4a64-4b3e-abf5-4e2a28a3fcfd |
 
 
 ## Challenges and Limitations
