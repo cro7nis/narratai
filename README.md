@@ -1,4 +1,3 @@
-# Narratai
 
 <img src="assets/image/Narratai_lg.png"  alt="Narratai logo"/>
 
@@ -68,9 +67,9 @@ The diagram illustrates the workflow of the **Narratai** application, which proc
 
 ## Examples
 
-| Original                                  | Predefined Speaker English | Predefined Speaker Spanish | Voice Cloning Spanish|
-|-------------------------------------------|---------------------------|----------------------------|----------------------|
-|  |                        | |
+| Original                                  | Predefined Speaker - English | Predefined Speaker - Spanish | Voice Cloning - Japanese |
+|-------------------------------------------|------------------------------|------------------------------|--------------------------|
+|  |                              |                              |
 
 
 
