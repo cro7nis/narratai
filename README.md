@@ -23,7 +23,7 @@ This inspired me to create a tool that not only supports creators but also enhan
 
 1. [faster-whisper](https://github.com/SYSTRAN/faster-whisper):
    - A reimplementation of OpenAI's Whisper model using CTranslate2, which is a fast inference engine for Transformer models.
-   - The medium whisper model because it offers a nice tradeoff of speed and accuracy.
+   - The [medium](https://huggingface.co/Systran/faster-whisper-medium) whisper model is used because it offers a nice tradeoff of speed and accuracy.
 2. [No Language Left Behind](https://ai.meta.com/research/no-language-left-behind/):
    - Created by Meta, NLLB is a cutting-edge machine translation model designed to work with over 200 languages, including low-resource languages.
    - Narratai uses the [nllb-200-distilled-600M](https://huggingface.co/facebook/nllb-200-distilled-600M) model.
