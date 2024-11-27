@@ -183,16 +183,16 @@ def generate_from_srt(input_component, speed, language, radio, details, progress
     if radio == 'Predifined speakers':
         speaker_id = details
         audio_filepath = narrator.narrate(raw_subtitles=captions, voice_speed=speed, language=language,
-                                          output_dir=settings.cache_dir,
+                                          output_dir=settings.app.cache_dir,
                                           speaker_id=speaker_id, progress=progress, initial_progress=0.2)
     else:
         sr, audio_array = details
-        user_wav_file = os.path.join(settings.cache_dir, 'user.wav')
+        user_wav_file = os.path.join(settings.app.cache_dir, 'user.wav')
         wavfile.write(user_wav_file, sr, audio_array)
         voice_generator.load_model_if_not_loaded()
         gpt_cond_latent, speaker_embedding = voice_generator.model.get_conditioning_latents(audio_path=user_wav_file)
         audio_filepath = narrator.narrate(raw_subtitles=captions, voice_speed=speed, language=language,
-                                          output_dir=settings.cache_dir,
+                                          output_dir=settings.app.cache_dir,
                                           speaker_data=(gpt_cond_latent, speaker_embedding), progress=progress,
                                           initial_progress=0.2)
     progress(1.0, desc="Generating Voice")
