@@ -105,6 +105,13 @@ docker run --gpus all -p 7860:7860 <user>/narratai:0.0.1
 ```
 
 ## Deploy on Akash <img src="assets/image/akash-logo-sm.png" alt="drawing" style="width:25px;"/>
+
+
+
+https://github.com/user-attachments/assets/f38d3ebb-902a-4d11-bb98-31388cffaf7f
+
+
+
  - Push docker image on [Docker hub](https://hub.docker.com/)
    - `docker push <user>/narratai:0.0.1`
    - or use the uploaded [image](https://hub.docker.com/repository/docker/cro7/narratai/general)
