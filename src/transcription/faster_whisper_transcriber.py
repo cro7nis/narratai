@@ -9,8 +9,9 @@ from faster_whisper.utils import download_model, available_models
 
 from transcription.transcriber import Transcriber
 from transcription.utils.file import unpack
-from transcription.utils.type import ASRResult, LanguageResult
+from transcription.utils.type import ASRResult
 from utils.logger import logger
+
 
 class FasterWhisperTranscriber(Transcriber):
 
@@ -62,15 +63,13 @@ class FasterWhisperTranscriber(Transcriber):
                     f"Model {self.cfg.model} not found; available models = {available_models()}"
                 )
 
-    def transcribe(self, audio_file: str, language: str = None, task: str = 'transcribe', speaker_labels: list = None,
-                   available_languages=None,
-                   language_mode: Optional[str] = 'suggest'):
+    def transcribe(self, audio_file: str, language: str = None, task: str = 'transcribe'):
         assert task in ['transcribe', 'translate']
-        result = self.transcribe_full_audio(audio_file, language=language, task=task)
+        result = self.transcribe_audio(audio_file, language=language, task=task)
         self.empty_cache()
         return result
 
-    def transcribe_full_audio(self, audio_file: str, language: str = None, task: str = 'transcribe') -> ASRResult:
+    def transcribe_audio(self, audio_file: str, language: str = None, task: str = 'transcribe') -> ASRResult:
         logger.info(f'Transcribing {audio_file}')
         self.assert_checkpoint_is_downloaded()
         self.load_model_if_not_loaded()
@@ -98,22 +97,6 @@ class FasterWhisperTranscriber(Transcriber):
         processing_duration = end - start
         logger.info(f'Transcription completed in {processing_duration:.2f} seconds')
 
-        if 'cuda' in self.cfg.device:
-            torch.cuda.empty_cache()
-
         return ASRResult(transcription=transcription, word_hyp=word_hyp, word_ts_hyp=word_ts_hyp,
                          processing_duration=processing_duration,
                          language=language, raw_result=asr_result)
-
-    def detect_language(self, audio, fallback_language=None) -> LanguageResult:
-
-        features = self.model.feature_extractor(audio)
-        segment = features[:, : self.model.feature_extractor.nb_max_frames]
-        encoder_output = self.model.encode(segment)
-        results = self.model.model.detect_language(encoder_output)[0]
-        # Parse language names to strip out markers
-        probs = {token[2:-2]: prob for (token, prob) in results}
-        languages = sorted(probs.items(), key=lambda kv: kv[1])[::-1]
-        language, probability = languages[0]
-        top_three_predictions = {lang[0]: lang[1] for lang in languages[:3]}
-        return LanguageResult(language=language, probability=probability, predictions=top_three_predictions)
