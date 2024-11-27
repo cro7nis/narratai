@@ -1,5 +1,5 @@
 
-<img src="assets/image/Narratai_lg.png"  alt="Narratai logo"/>
+<img src="assets/image/banner.png"  alt="Narratai logo"/>
 
 ## Description
 **NarratAI** is an AI-powered app built for [Akashathon](https://app.buidlbox.io/akash-network/akashathon-3),
