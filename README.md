@@ -106,11 +106,9 @@ docker run --gpus all -p 7860:7860 <user>/narratai:0.0.1
 
 ## Deploy on Akash <img src="assets/image/akash-logo-sm.png" alt="drawing" style="width:25px;"/>
 
+Note that for the video guide i used NarrateAI to generate the voiceover :)
 
-
-https://github.com/user-attachments/assets/f38d3ebb-902a-4d11-bb98-31388cffaf7f
-
-
+https://github.com/user-attachments/assets/d60770f8-663f-48a7-869d-6d52b3213130
 
  - Push docker image on [Docker hub](https://hub.docker.com/)
    - `docker push <user>/narratai:0.0.1`
