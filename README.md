@@ -125,6 +125,7 @@ https://github.com/user-attachments/assets/d60770f8-663f-48a7-869d-6d52b3213130
 - Select YAML tab and paste the [deploy.yaml](deploy.yaml) configuration
 - Press "Create Deployment" and accept wallet transaction
 - Review bids, select provider and accept wallet transaction
+  - NarratAI requires a GPU server with at least 9GB VRAM
 - Wait until container is up and go to LEASES tab to press the URI
 - Check the [Akash console docs](https://akash.network/docs/getting-started/quickstart-guides/akash-console/) if you have and questions
 
