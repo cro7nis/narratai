@@ -40,17 +40,6 @@ default:
 
 development:
   env: development
-#  transcriber:
-#    ckpt_path: ../checkpoints/whisper
-#    dynaconf_merge: True
-#  voice_generator:
-#    checkpoint_path: ../checkpoints
-#    speaker_dict_path: ../checkpoints/data/speaker_data.pkl
-#    dynaconf_merge: True
-#  translator:
-#    cache_dir: ../checkpoints
-#    dynaconf_merge: True
-
 
 staging:
   env: staging
