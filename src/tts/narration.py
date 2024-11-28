@@ -83,6 +83,8 @@ class SubtitleNarrator:
             # speed = self.basic_speed
             start_sub = timer()
             while 1:
+                if iterations > 30:
+                    raise Exception('Cannot fit generated speech in SRT segment')
                 if text == '':
                     x = np.zeros(int(sub_duration * self.sr))
                     logger.debug("NO TEXT")
