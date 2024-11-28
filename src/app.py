@@ -511,7 +511,8 @@ with gr.Blocks(
         
         ## Disclaimer
         
-        **NarratAI** is build for educational purposes and is not intented for commercial use.
+        **NarratAI** is build for educational purposes and is not intented for commercial use. The code is open source through the MIT Licence. The models and checkpoints used have their own licence that might be different for the license in this repo.
+
         """)
 
     akash_logo = gr.Image('assets/image/akash-logo-sm.png', show_label=False, show_download_button=False,
