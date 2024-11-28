@@ -139,4 +139,4 @@ There are a lot of things that can be improved in the app. Would be happy to get
 
 ## Disclaimer
 
-**NarratAI** is build for educational purposes and is not intented for commercial use.
+**NarratAI** is build for educational purposes and is not intented for commercial use. The code is open source through the MIT Licence. The models and checkpoints used in this repo have their own licence that might be different for the license in this repo.
