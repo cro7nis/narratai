@@ -5,24 +5,31 @@ services:
     image: cro7/narratai:0.0.1
     expose:
       - port: 7860
-        as: 7860
+        as: 80
         to:
           - global: true
+
 profiles:
   compute:
     app:
       resources:
         cpu:
-          units: 16
+          units: 8
         memory:
-          size: 32Gi
+          size: 16Gi
         storage:
-          - size: 40Gi
+          - size: 30Gi
         gpu:
           units: 1
           attributes:
             vendor:
               nvidia:
+                 - model: rtx4090
+                 - model: rtx3090
+                 - model: v100
+                 - model: p100
+                 - model: p40
+
   placement:
     dcloud:
       pricing:
