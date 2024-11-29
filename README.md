@@ -6,9 +6,9 @@
 running on the decentralized Akash Network <img src="assets/image/akash-logo-sm.png" alt="drawing" style="width:15px;"/>. 
 It processes audio and video files by transcribing speech into text, translating it into multiple languages, and generating AI-driven voiceovers. 
 The app uses Whisper to create accurate transcriptions with word-level timestamps, enabling precise subtitles. 
-It leverages the NLLB model to translate subtibles into many languages. 
+It leverages the NLLB model to translate subtitles into many languages. 
 For voiceovers, it uses Coqui-TTS, an advanced AI technology to generate natural-sounding voices, offering options for predefined voices, voice cloning, or using the original speaker's voice. 
-**NarratAI** enhances media accessibility and localization while showcasing the power of decentralized infrastructure and AI.
+**NarratAI** enhances media accessibility and localization while showcasing the power of decentralized infrastructure and AI. Check the YouTube video [here](https://www.youtube.com/watch?v=oviBgv4k-nY&ab_channel=cro7).
 
 ## Motivation
 The motivation behind building this app stemmed from my experience participating in Akash [Zealy](https://zealy.io/cw/akashnetwork/questboard) campaigns, 
@@ -53,15 +53,16 @@ The diagram illustrates the workflow of the **NarratAI** application, which proc
 
 3. **Translation with NLLB**:  
    - If the user specifies a language different from the original transcription, the **NLLB** model translates the SRT file.  
-   - This results in a new SRT file with segments translated into the desired language, maintaining the original timing structure.  
+   - This results in a new SRT file with segments translated into the desired language, maintaining the original timing structure. 
+   - 17 languages are supported
 
 4. **Voice Generation with XTTS**:  
    - The **XTTS** model is applied to each SRT segment to generate artificial speech.  
    - Users have several options for voice generation:
-     - **Predefined Speakers**: Choose from a set of available voices.  
-     - **Voice Cloning**: Submit their own recordings to clone their voice.  
-     - **Input Media Voice Cloning**: Use the voice from the uploaded media file for cloning.  
-     - Adjust the generated voice speed.
+     - **Adjust Speed**: The user can adjust the voice of generated speech (Not always applied due to synchronization constraints)
+     - **Predefined Speakers**: The user can choose from a set of available speakers.  
+     - **Voice Cloning**: The user can submit their own mic recordings for voice cloning.  
+     - **Input Media Voice Cloning**: The media voice is used for cloning.
 
 5. **Output Presentation**:  
    - The app combines the generated voice segments into a cohesive voiceover and presents the final output to the user. 
@@ -133,7 +134,7 @@ https://github.com/user-attachments/assets/d60770f8-663f-48a7-869d-6d52b3213130
 ## Future Work
 There are a lot of things that can be improved in the app. Would be happy to get some help with the following:
 - Include speaker diarization and generate different voice for different speakers
-- Improve syncronization between SRT and generated voice segments
+- Improve synchronization between SRT and generated voice segments
 - Improve UI 
 - Support longer videos by making the voice generation process faster
 
